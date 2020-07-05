@@ -1,7 +1,8 @@
 import React, {useState, useContext} from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import {makeStyles} from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import Checkbox from '@material-ui/core/Checkbox';
 import {SearchResultContext} from "../Contexts/SearchResultsContext";
 
 const SearchBar = () => {
@@ -18,6 +19,7 @@ const SearchBar = () => {
     const classes = useStyles();
     const [description, setDescription] = useState("");
     const [location, setLocation] = useState("");
+    const [checked, setChecked] = useState(false);
     const {searchResults, searchJobs} = useContext(SearchResultContext);
 
 
@@ -30,35 +32,46 @@ const SearchBar = () => {
     };
 
     const handleSearch = () => {
-        searchJobs(description, location);
+        searchJobs(description, location, checked);
+    };
+
+    const handleChecked = () => {
+      setChecked(!checked);
     };
 
     return (
         <div className="search-bar__container">
             <form className={classes.root} noValidate autoComplete="off">
-                    <TextField
-                        id="outlined-textarea"
-                        label="Job Description"
-                        placeholder="Placeholder"
-                        multiline
-                        variant="outlined"
-                        onChange={handleDescriptionChange}
-                    />
-                    <TextField
-                        id="outlined-textarea"
-                        label="Location"
-                        placeholder="Placeholder"
-                        multiline
-                        variant="outlined"
-                        onChange={handleLocationChange}
-                    />
-            </form>
-            <Button variant="contained"
+                <TextField
+                    id="outlined-textarea"
+                    label="Job Description"
+                    placeholder="Placeholder"
+                    multiline
+                    variant="outlined"
+                    onChange={handleDescriptionChange}
+                />
+                <TextField
+                    id="outlined-textarea"
+                    label="Location"
+                    placeholder="Placeholder"
+                    multiline
+                    variant="outlined"
+                    onChange={handleLocationChange}
+                />
+                <Checkbox
                     color="primary"
-                    onClick={handleSearch}
-            >
-                Search
-            </Button>
+                    inputProps={{ 'aria-label': 'secondary checkbox' }}
+                    onChange={handleChecked}
+                />
+                Full time only
+                <Button variant="contained"
+                        color="primary"
+                        onClick={handleSearch}
+                >
+                    Search
+                </Button>
+            </form>
+
         </div>
     );
 };

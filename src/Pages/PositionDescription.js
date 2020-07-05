@@ -1,6 +1,7 @@
 import React, {useContext, useEffect} from 'react';
 import {useParams} from 'react-router-dom';
 import {SearchResultContext} from "../Contexts/SearchResultsContext";
+import SearchBar from "../Components/SearchBar";
 
 const PositionDescription = () => {
 
@@ -11,6 +12,7 @@ const PositionDescription = () => {
         getPositionDetails(positionId);
     };
 
+
     useEffect(() => {
         getPosition();
     }, []);
@@ -19,6 +21,7 @@ const PositionDescription = () => {
     return (
         <div>
             {positionDescription.title}
+            <div dangerouslySetInnerHTML={{ __html: positionDescription.description }} />
         </div>
     );
 };
