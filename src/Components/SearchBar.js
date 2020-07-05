@@ -18,7 +18,7 @@ const SearchBar = () => {
     const classes = useStyles();
     const [description, setDescription] = useState();
     const [location, setLocation] = useState();
-    const {searchResults} = useContext(SearchResultContext);
+    const {searchResults, searchJobs} = useContext(SearchResultContext);
 
 
     const handleDescriptionChange = (event) => {
@@ -32,7 +32,7 @@ const SearchBar = () => {
     };
 
     const handleSearch = () => {
-      alert(location + " " + description)
+        searchJobs(description, location);
     };
 
     return (
