@@ -16,5 +16,19 @@
 .position_list__container {
   border: black solid 1px;
   padding: 1rem;
-  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.position_list__item {
+  margin: 1rem;
+}
+
+.MuiButtonBase-root,
+.MuiButton-root,
+.MuiButton-contained,
+.MuiButton-containedPrimary {
+  align-self: flex-end;
+
 }

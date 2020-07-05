@@ -31,13 +31,20 @@ export const SearchResultProvider = props => {
         setPositionDescription(positionDetails);
     };
 
+    const getOpeningPositions = async () => {
+      let url = `${PROXY_URL}${API_URL}.json`;
+      let openingPositions = await ApiService.searchPositions(url, CONFIG)
+        setSearchResults(openingPositions);
+    };
+
     return (
         <SearchResultContext.Provider
             value={{
                 searchResults,
                 searchJobs,
                 positionDescription,
-                getPositionDetails
+                getPositionDetails,
+                getOpeningPositions
             }}
         >
             {props.children}

@@ -63,7 +63,7 @@ const SearchBar = () => {
                     inputProps={{ 'aria-label': 'secondary checkbox' }}
                     onChange={handleChecked}
                 />
-                Full time only
+                <span>Full time only</span>
                 <Button variant="contained"
                         color="primary"
                         onClick={handleSearch}

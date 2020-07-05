@@ -1,7 +1,6 @@
 import React from 'react';
 import {useHistory} from "react-router-dom";
 
-
 const PositionListItem = ({position}) => {
 
     const history = useHistory();
@@ -11,7 +10,7 @@ const PositionListItem = ({position}) => {
     };
 
     return (
-        <div onClick={openJob}>
+        <div className="position_list__item" onClick={openJob}>
             {position.title}
         </div>
     );
