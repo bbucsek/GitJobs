@@ -16,19 +16,17 @@ const SearchBar = () => {
     }));
 
     const classes = useStyles();
-    const [description, setDescription] = useState();
-    const [location, setLocation] = useState();
+    const [description, setDescription] = useState("");
+    const [location, setLocation] = useState("");
     const {searchResults, searchJobs} = useContext(SearchResultContext);
 
 
     const handleDescriptionChange = (event) => {
         setDescription(event.target.value);
-        console.log(description);
     };
 
     const handleLocationChange = (event) => {
         setLocation(event.target.value);
-        console.log(location);
     };
 
     const handleSearch = () => {

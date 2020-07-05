@@ -1,6 +1,6 @@
 import React from 'react';
 
-const JobDescription = () => {
+const PositionDescription = () => {
     return (
         <div>
             JOB DESCRIPTIOOOOOOON
@@ -8,4 +8,4 @@ const JobDescription = () => {
     );
 };
 
-export default JobDescription;
+export default PositionDescription;

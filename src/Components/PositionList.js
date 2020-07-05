@@ -1,8 +1,8 @@
 import React, {useContext} from 'react';
 import {SearchResultContext} from "../Contexts/SearchResultsContext";
-import JobListItem from "./JobListItem";
+import PositionListItem from "./PositionListItem";
 
-const JobList = () => {
+const PositionList = () => {
 
     const {searchResults, setSearchResults} = useContext(SearchResultContext);
 
@@ -10,11 +10,11 @@ const JobList = () => {
 
     return (
         <React.Fragment>
-            {searchResults.map(result => {
-                return <JobListItem key={result.id} job={result} />
+            {searchResults.map(position => {
+                return <PositionListItem key={position.id} position={position} />
             })}
         </React.Fragment>
     );
 };
 
-export default JobList;
+export default PositionList;
