@@ -1,9 +1,24 @@
-import React from 'react';
+import React, {useContext, useEffect} from 'react';
+import {useParams} from 'react-router-dom';
+import {SearchResultContext} from "../Contexts/SearchResultsContext";
 
 const PositionDescription = () => {
+
+    const {positionId} = useParams();
+    const {positionDescription, getPositionDetails} = useContext(SearchResultContext);
+
+    const getPosition = () => {
+        getPositionDetails(positionId);
+    };
+
+    useEffect(() => {
+        getPosition();
+    }, []);
+
+
     return (
         <div>
-            JOB DESCRIPTIOOOOOOON
+            {positionDescription.title}
         </div>
     );
 };

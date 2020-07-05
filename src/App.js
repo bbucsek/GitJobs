@@ -12,7 +12,7 @@ function App() {
     return (
         <SearchResultProvider>
             <div className="page-container">
-                <Route exact path="/job/:id" component={PositionDescription}/>
+                <Route exact path="/position/:positionId" component={PositionDescription}/>
                 <Route exact path="/" component={SearchPage}/>
             </div>
         </SearchResultProvider>
