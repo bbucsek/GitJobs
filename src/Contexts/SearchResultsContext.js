@@ -5,15 +5,20 @@ export const SearchResultContext = createContext();
 
 export const SearchResultProvider = props => {
 
-    const API_URL = "https://jobs.github.com/positions.json?utf8=%E2%9C%93";
+    const API_URL = "https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions.json?utf8=%E2%9C%93";
     const DESCRIPTION_URL = "&description=";
-    const LOCATION_URL = "= &location=";
+    const LOCATION_URL = "&location=";
 
     const [searchResults, setSearchResults] = useState([]);
 
     const searchJobs = async (description, location) => {
         let url = API_URL + DESCRIPTION_URL + description + LOCATION_URL + location;
-        let response = await axios.get(url);
+        let config = {
+            headers: {
+                'Access-Control-Expose-Headers': 'access-control-allow-origin'
+            }
+        };
+        let response = await axios.get(url, config);
         console.log(response.data);
         return response.data;
 
