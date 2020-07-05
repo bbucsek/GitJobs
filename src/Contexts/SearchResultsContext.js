@@ -1,5 +1,6 @@
 import React, {useState, createContext} from "react";
 import axios from 'axios';
+import ApiService from "../Services/ApiService";
 
 export const SearchResultContext = createContext();
 
@@ -19,10 +20,8 @@ export const SearchResultProvider = props => {
                 'Access-Control-Expose-Headers': 'access-control-allow-origin'
             }
         };
-        let response = await axios.get(url, config);
-        console.log(response.data);
-        setSearchResults(response.data);
-        return response.data;
+        let positions = await ApiService.searchPositions(url, config);
+        setSearchResults(positions);
 
 
     };
