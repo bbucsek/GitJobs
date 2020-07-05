@@ -20,6 +20,7 @@ export const SearchResultProvider = props => {
         };
         let response = await axios.get(url, config);
         console.log(response.data);
+        setSearchResults(response.data);
         return response.data;
 
 

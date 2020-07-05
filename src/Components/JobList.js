@@ -1,5 +1,6 @@
 import React, {useContext} from 'react';
 import {SearchResultContext} from "../Contexts/SearchResultsContext";
+import JobListItem from "./JobListItem";
 
 const JobList = () => {
 
@@ -9,7 +10,9 @@ const JobList = () => {
 
     return (
         <React.Fragment>
-            Results
+            {searchResults.map(result => {
+                return <JobListItem key={result.id} job={result} />
+            })}
         </React.Fragment>
     );
 };
