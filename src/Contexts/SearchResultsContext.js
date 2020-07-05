@@ -1,5 +1,4 @@
 import React, {useState, createContext} from "react";
-import axios from 'axios';
 import ApiService from "../Services/ApiService";
 
 export const SearchResultContext = createContext();

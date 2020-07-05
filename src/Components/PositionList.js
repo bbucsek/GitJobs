@@ -6,13 +6,17 @@ const PositionList = () => {
 
     const {searchResults, setSearchResults} = useContext(SearchResultContext);
 
-    if (!searchResults) {return}
+    if (!searchResults) {
+        return
+    }
 
     return (
         <React.Fragment>
-            {searchResults.map(position => {
-                return <PositionListItem key={position.id} position={position} />
-            })}
+            <div className="position_list__container">
+                {searchResults.map(position => {
+                    return <PositionListItem key={position.id} position={position}/>
+                })}
+            </div>
         </React.Fragment>
     );
 };

@@ -45,17 +45,17 @@ const SearchBar = () => {
                 <TextField
                     id="outlined-textarea"
                     label="Job Description"
-                    placeholder="Placeholder"
-                    multiline
+                    placeholder="Filter by title, benefits, companies, expertise"
                     variant="outlined"
+                    size="small"
                     onChange={handleDescriptionChange}
                 />
                 <TextField
                     id="outlined-textarea"
                     label="Location"
-                    placeholder="Placeholder"
-                    multiline
+                    placeholder="Filter by city, state, zip code or country"
                     variant="outlined"
+                    size="small"
                     onChange={handleLocationChange}
                 />
                 <Checkbox
