@@ -7,6 +7,7 @@
 
 body {
   margin: 0;
+  padding-top: 60px;
 }
 
 /*------------------------SEARCH FIELD STYLE----------------------*/
@@ -97,5 +98,32 @@ body {
   color: #457B9D;
 }
 
-
 /*------------------------POSITION LIST ITEM STYLE----------------------*/
+
+
+/*------------------------------HEADER-----------------------------------*/
+
+.header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #457B9D;
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  z-index: 100;
+
+}
+
+.header__title {
+  font-weight: bold;
+  font-size: 2.5rem;
+  color: #F5F2E0;
+  padding: 0.5rem;
+  letter-spacing: 16px;
+  margin-right: 10%;
+}
+
+/*------------------------------HEADER-----------------------------------*/
