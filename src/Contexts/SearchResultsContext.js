@@ -5,7 +5,7 @@ export const SearchResultContext = createContext();
 
 export const SearchResultProvider = props => {
 
-    const PROXY_URL = "https://cors-anywhere.herokuapp.com/";
+    const PROXY_URL = "https://thingproxy.freeboard.io/fetch/";
     const API_URL = "https://jobs.github.com/positions";
     const CONFIG = {
         headers: {

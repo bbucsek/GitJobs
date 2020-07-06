@@ -3,6 +3,8 @@ import SearchBar from "../Components/SearchBar";
 import PositionList from "../Components/PositionList";
 import Container from '@material-ui/core/Container';
 import {SearchResultContext} from "../Contexts/SearchResultsContext";
+import {withStyles} from "@material-ui/core/styles";
+import Button from "@material-ui/core/Button";
 
 const SearchPage = () => {
 
@@ -17,13 +19,19 @@ const SearchPage = () => {
         getPosition();
     }, []);
 
+    const CustomContainer = withStyles((theme) => ({
+        root: {
+            backgroundColor: "#F5F2E0"
+        },
+    }))(Container);
+
 
     return (
         <>
-            <Container maxWidth="md">
+            <CustomContainer maxWidth="md">
                 <SearchBar/>
                 <PositionList/>
-            </Container>
+            </CustomContainer>
         </>
     );
 };

@@ -1,5 +1,5 @@
 import React, {useState, useContext} from 'react';
-import {makeStyles} from '@material-ui/core/styles';
+import {makeStyles, withStyles} from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import Checkbox from '@material-ui/core/Checkbox';
@@ -9,12 +9,26 @@ const SearchBar = () => {
 
     const useStyles = makeStyles((theme) => ({
         root: {
+            width: '100%',
+            padding: '1rem',
             '& .MuiTextField-root': {
                 margin: theme.spacing(1),
-                width: '25ch',
+                width: '99%',
             },
         },
     }));
+
+    const SearchButton = withStyles((theme) => ({
+        root: {
+            color: "white",
+            backgroundColor: "#1A936F",
+            float: "right",
+            width: "30%",
+            '&:hover': {
+                backgroundColor: "#88D498",
+            },
+        },
+    }))(Button);
 
     const classes = useStyles();
     const [description, setDescription] = useState("");
@@ -69,13 +83,13 @@ const SearchBar = () => {
                     onChange={handleChecked}
                 />
                 <span>Full time only</span>
-                <Button variant="contained"
+                <SearchButton variant="contained"
                         color="primary"
                         disabled={btnDisabled()}
                         onClick={handleSearch}
                 >
                     Search
-                </Button>
+                </SearchButton>
             </form>
 
         </div>
