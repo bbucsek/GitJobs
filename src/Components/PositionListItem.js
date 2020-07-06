@@ -10,9 +10,9 @@ const PositionListItem = ({position}) => {
     };
 
     return (
-        <div className="position_list_item" onClick={openJob}>
+        <div className="position_list_item">
             <div className="position_list_item__left">
-                <div className="position_list_item_title">
+                <div className="position_list_item_title" onClick={openJob}>
                     {position.title}
                 </div>
                 <div className="position_list_item__left_wrapper">

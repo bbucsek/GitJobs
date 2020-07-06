@@ -37,7 +37,7 @@ const SearchBar = () => {
     const [description, setDescription] = useState("");
     const [location, setLocation] = useState("");
     const [checked, setChecked] = useState(false);
-    const {searchResults, searchJobs} = useContext(SearchResultContext);
+    const {searchResults, searchJobs, setPageCount} = useContext(SearchResultContext);
 
 
     const handleDescriptionChange = (event) => {
@@ -49,6 +49,7 @@ const SearchBar = () => {
     };
 
     const handleSearch = () => {
+        setPageCount(2);
         searchJobs(description, location, checked);
     };
 
