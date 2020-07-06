@@ -7,7 +7,6 @@
 
 body {
   margin: 0;
-  padding-top: 60px;
 }
 
 /*------------------------SEARCH FIELD STYLE----------------------*/
@@ -105,7 +104,6 @@ body {
 
 .header {
   width: 100%;
-  position: fixed;
   top: 0;
   left: 0;
   background: #457B9D;
