@@ -39,6 +39,11 @@ const SearchBar = () => {
       setChecked(!checked);
     };
 
+    const btnDisabled = () => {
+      return !location && !description;
+
+    };
+
     return (
         <div className="search-bar__container">
             <form className={classes.root} noValidate autoComplete="off">
@@ -66,6 +71,7 @@ const SearchBar = () => {
                 <span>Full time only</span>
                 <Button variant="contained"
                         color="primary"
+                        disabled={btnDisabled()}
                         onClick={handleSearch}
                 >
                     Search

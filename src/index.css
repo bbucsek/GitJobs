@@ -17,8 +17,7 @@
   border: black solid 1px;
   padding: 1rem;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-direction: column;
 }
 
 .position_list__item {
