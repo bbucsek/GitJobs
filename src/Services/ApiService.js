@@ -4,13 +4,13 @@ import axios from 'axios';
 export default {
 
 
-    searchPositions: async (url, config) => {
-        let response = await axios.get(url, config);
+    searchPositions: async (url) => {
+        let response = await axios.get(url);
         return response.data;
     },
 
-    getPositionDetails: async (url, config) => {
-        let response = await axios.get(url, config);
+    getPositionDetails: async (url) => {
+        let response = await axios.get(url);
         return response.data;
     }
 

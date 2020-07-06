@@ -1,10 +1,9 @@
-import React, {useContext, useEffect, useState} from 'react';
+import React, {useContext, useEffect} from 'react';
 import SearchBar from "../Components/SearchBar";
 import PositionList from "../Components/PositionList";
 import Container from '@material-ui/core/Container';
 import {SearchResultContext} from "../Contexts/SearchResultsContext";
 import {withStyles} from "@material-ui/core/styles";
-import Button from "@material-ui/core/Button";
 
 const SearchPage = () => {
 

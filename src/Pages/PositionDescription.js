@@ -1,7 +1,8 @@
 import React, {useContext, useEffect} from 'react';
 import {useParams} from 'react-router-dom';
 import {SearchResultContext} from "../Contexts/SearchResultsContext";
-import SearchBar from "../Components/SearchBar";
+import {withStyles} from "@material-ui/core/styles";
+import Container from "@material-ui/core/Container";
 
 const PositionDescription = () => {
 
@@ -17,12 +18,20 @@ const PositionDescription = () => {
         getPosition();
     }, []);
 
+    const CustomContainer = withStyles((theme) => ({
+        root: {
+            backgroundColor: "#F5F2E0"
+        },
+    }))(Container);
+
 
     return (
+        <CustomContainer maxWidth="md">
         <div>
             {positionDescription.title}
             <div dangerouslySetInnerHTML={{ __html: positionDescription.description }} />
         </div>
+        </CustomContainer>
     );
 };
 
