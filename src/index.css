@@ -9,6 +9,8 @@ body {
   margin: 0;
 }
 
+/*------------------------SEARCH FIELD STYLE----------------------*/
+
 .search-bar__container {
   display: flex;
   flex-direction: row;
@@ -27,14 +29,73 @@ body {
   flex-direction: column;
 }
 
-.position_list__item {
-  margin: 1rem;
-}
-
 .MuiButtonBase-root,
 .MuiButton-root,
 .MuiButton-contained,
 .MuiButton-containedPrimary {
   align-self: flex-end;
+}
+
+/*------------------------SEARCH FIELD STYLE----------------------*/
+
+
+/*------------------------POSITION LIST ITEM STYLE----------------------*/
+
+.position_list_item {
+  width: inherit;
+  margin: 1rem;
+  display: flex;
+  flex-direction: row;
+}
+
+.position_list_item__left {
+  width: 50%;
+  text-align: left;
+}
+
+.position_list_item__right {
+  width: 50%;
+  text-align: right;
 
 }
+
+.position_list_item__left_wrapper {
+  display: flex;
+}
+
+.position_list_item_title {
+  color: #4d92bc;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.position_list_item_company {
+  color: #7c919e;
+  font-weight: bold;
+}
+
+.position_list_item_type {
+  color: green;
+  font-weight: bold;
+  margin-left: 2rem;
+}
+
+.position_list_item_date {
+  color: #7c919e;
+  font-weight: bold;
+  text-align: right;
+
+}
+
+.position_list_item_location {
+  color: #95a5af;
+}
+
+.position_list_item_title:hover,
+.position_list_item_title:active {
+  cursor: pointer;
+  color: #457B9D;
+}
+
+
+/*------------------------POSITION LIST ITEM STYLE----------------------*/

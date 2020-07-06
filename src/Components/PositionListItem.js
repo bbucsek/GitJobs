@@ -10,8 +10,28 @@ const PositionListItem = ({position}) => {
     };
 
     return (
-        <div className="position_list__item" onClick={openJob}>
-            {position.title}
+        <div className="position_list_item" onClick={openJob}>
+            <div className="position_list_item__left">
+                <div className="position_list_item_title">
+                    {position.title}
+                </div>
+                <div className="position_list_item__left_wrapper">
+                <div className="position_list_item_company">
+                    {position.company}
+                </div>
+                <div className="position_list_item_type">
+                    {position.type}
+                </div>
+                </div>
+            </div>
+            <div className="position_list_item__right">
+                <div className="position_list_item_date">
+                    {position.created_at}
+                </div>
+                <div className="position_list_item_location">
+                    {position.location}
+                </div>
+            </div>
         </div>
     );
 };

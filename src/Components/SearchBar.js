@@ -26,7 +26,7 @@ const SearchBar = () => {
             float: "right",
             width: "30%",
             '&:hover': {
-                backgroundColor: "#1D3557",
+                backgroundColor: "#4d92bc",
             },
         },
     }))(Button);
