@@ -5,6 +5,10 @@
   list-style-type: none;
 }
 
+body {
+  margin: 0;
+}
+
 .search-bar__container {
   display: flex;
   flex-direction: row;
@@ -12,6 +16,9 @@
   padding: 1rem;
 }
 
+.MuiFormControlLabel-root {
+  padding: 0 0 0 8px;
+}
 
 
 .position_list__container {

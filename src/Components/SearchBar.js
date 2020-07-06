@@ -4,6 +4,7 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import Checkbox from '@material-ui/core/Checkbox';
 import {SearchResultContext} from "../Contexts/SearchResultsContext";
+import FormControlLabel from "@material-ui/core/FormControlLabel";
 
 const SearchBar = () => {
 
@@ -21,14 +22,16 @@ const SearchBar = () => {
     const SearchButton = withStyles((theme) => ({
         root: {
             color: "white",
-            backgroundColor: "#1A936F",
+            backgroundColor: "#457B9D",
             float: "right",
             width: "30%",
             '&:hover': {
-                backgroundColor: "#88D498",
+                backgroundColor: "#1D3557",
             },
         },
     }))(Button);
+
+
 
     const classes = useStyles();
     const [description, setDescription] = useState("");
@@ -59,10 +62,10 @@ const SearchBar = () => {
     };
 
     return (
+
         <div className="search-bar__container">
             <form className={classes.root} noValidate autoComplete="off">
                 <TextField
-                    id="outlined-textarea"
                     label="Job Description"
                     placeholder="Filter by title, benefits, companies, expertise"
                     variant="outlined"
@@ -70,19 +73,22 @@ const SearchBar = () => {
                     onChange={handleDescriptionChange}
                 />
                 <TextField
-                    id="outlined-textarea"
                     label="Location"
                     placeholder="Filter by city, state, zip code or country"
                     variant="outlined"
                     size="small"
                     onChange={handleLocationChange}
                 />
-                <Checkbox
-                    color="primary"
-                    inputProps={{ 'aria-label': 'secondary checkbox' }}
-                    onChange={handleChecked}
+                <FormControlLabel
+                    control={
+                        <Checkbox
+                            onChange={handleChecked}
+                            name="checkedB"
+                            color="primary"
+                        />
+                    }
+                    label="Full time"
                 />
-                <span>Full time only</span>
                 <SearchButton variant="contained"
                         color="primary"
                         disabled={btnDisabled()}
