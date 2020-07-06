@@ -124,4 +124,35 @@ body {
   margin-right: 10%;
 }
 
+.header__title:hover,
+.header__title:active {
+  cursor: pointer;
+}
+
 /*------------------------------HEADER-----------------------------------*/
+
+
+.footer-container {
+  background-color: #457B9D;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  padding: 32px;
+  color: #F5F2E0;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.footer-title {
+  padding: 16px;
+}
+
+.footer-contact {
+  padding: 16px;
+}
+
+.footer-whatever {
+  padding: 16px;
+}
