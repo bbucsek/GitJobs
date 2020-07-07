@@ -5,6 +5,7 @@ export const SearchResultContext = createContext();
 
 export const SearchResultProvider = props => {
 
+
     const PROXY_URL = "https://thingproxy.freeboard.io/fetch/";
     const API_URL = "https://jobs.github.com/positions";
     /*const CONFIG = {
@@ -20,7 +21,7 @@ export const SearchResultProvider = props => {
     const [currentUrl, setCurrentUrl] = useState("");
 
     const searchJobs = async (description, location, checked) => {
-        console.log(pageCount);
+        console.log(`async${pageCount}`);
         let fullTime = checked ? "&full_time=on" : "";
         let url = `${PROXY_URL}${API_URL}.json?utf8=%E2%9C%93&description=${description}&location=${location}${fullTime}`;
         let nextPageUrl = `${PROXY_URL}${API_URL}.json?utf8=%E2%9C%93&description=${description}&location=${location}${fullTime}&page=${pageCount}`;
@@ -66,7 +67,8 @@ export const SearchResultProvider = props => {
                 getOpeningPositions,
                 nextPagePositions,
                 getNextPagePositions,
-                setPageCount
+                setPageCount,
+                pageCount
             }}
         >
             {props.children}

@@ -13,7 +13,8 @@ const PositionList = () => {
             color: "white",
             backgroundColor: "#457B9D",
             float: "right",
-            width: "30%",
+            width: "10%",
+            margin: '1rem',
             '&:hover': {
                 backgroundColor: "#4d92bc",
             },

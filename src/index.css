@@ -29,13 +29,6 @@ body {
   flex-direction: column;
 }
 
-.MuiButtonBase-root,
-.MuiButton-root,
-.MuiButton-contained,
-.MuiButton-containedPrimary {
-  align-self: flex-end;
-}
-
 /*------------------------SEARCH FIELD STYLE----------------------*/
 
 
