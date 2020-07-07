@@ -27,6 +27,7 @@ const PositionList = () => {
 
     const handleNextPageButton = () => {
         getNextPagePositions();
+        window.scrollTo(0, 0)
     };
 
     if (!searchResults) {

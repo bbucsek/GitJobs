@@ -21,10 +21,10 @@ export const SearchResultProvider = props => {
     const [currentUrl, setCurrentUrl] = useState("");
 
     const searchJobs = async (description, location, checked) => {
-        console.log(`async${pageCount}`);
+        setPageCount(2);
         let fullTime = checked ? "&full_time=on" : "";
         let url = `${PROXY_URL}${API_URL}.json?utf8=%E2%9C%93&description=${description}&location=${location}${fullTime}`;
-        let nextPageUrl = `${PROXY_URL}${API_URL}.json?utf8=%E2%9C%93&description=${description}&location=${location}${fullTime}&page=${pageCount}`;
+        let nextPageUrl = `${PROXY_URL}${API_URL}.json?utf8=%E2%9C%93&description=${description}&location=${location}${fullTime}&page=${2}`;
         let positions = await ApiService.searchPositions(url);
         let nextPagePositions = await ApiService.searchPositions(nextPageUrl);
         setSearchResults(positions);
@@ -49,9 +49,12 @@ export const SearchResultProvider = props => {
     };
 
     const getNextPagePositions = async () => {
+        console.log(`nextbtn${pageCount}`);
+        setSearchResults(null);
         setSearchResults(nextPagePositions);
         setPageCount(pageCount + 1);
         let nextPageUrl = `${currentUrl}?page=${pageCount}`;
+        console.log(`aftersetpage${pageCount}and the url is: ${nextPageUrl}`);
         let nextPagePos = await ApiService.searchPositions(nextPageUrl);
         setNextPagePositions(nextPagePos);
 
