@@ -16,6 +16,7 @@ export const SearchResultProvider = props => {
 
     const [searchResults, setSearchResults] = useState([]);
     const [positionDescription, setPositionDescription] = useState([]);
+    const [previousPagePositions, setPreviousPagePositions] = useState([]);
     const [nextPagePositions, setNextPagePositions] = useState([]);
     const [pageCount, setPageCount] = useState(2);
     const [currentUrl, setCurrentUrl] = useState("");
@@ -49,14 +50,24 @@ export const SearchResultProvider = props => {
     };
 
     const getNextPagePositions = async () => {
+        setPreviousPagePositions(searchResults);
         setSearchResults(null);
         setSearchResults(nextPagePositions);
         let nextPageUrl = `${currentUrl}?page=${pageCount + 1}`;
         let nextPagePos = await ApiService.searchPositions(nextPageUrl);
-        console.log(nextPagePositions);
-        console.log(nextPagePos);
         setPageCount(pageCount + 1);
         setNextPagePositions(nextPagePos);
+
+    };
+
+    const getPreviousPagePositions = async () => {
+        setNextPagePositions(searchResults);
+        setSearchResults(null);
+        setSearchResults(previousPagePositions);
+        let previousPageUrl = `${currentUrl}?page=${pageCount - 1}`;
+        let previousPagePos = await ApiService.searchPositions(previousPageUrl);
+        setPageCount(pageCount === 1 ? 1 : pageCount - 1);
+        setPreviousPagePositions(pageCount === 1 ? [] : previousPagePos);
 
     };
 
@@ -71,7 +82,9 @@ export const SearchResultProvider = props => {
                 nextPagePositions,
                 getNextPagePositions,
                 setPageCount,
-                pageCount
+                pageCount,
+                previousPagePositions,
+                getPreviousPagePositions
             }}
         >
             {props.children}
