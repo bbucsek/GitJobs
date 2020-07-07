@@ -27,8 +27,10 @@ const PositionDescription = () => {
 
     return (
         <CustomContainer maxWidth="md">
-        <div>
-            {positionDescription.title}
+        <div className="position_description__container">
+            <div className="position_description_title">
+                {positionDescription.title}
+            </div>
             <div dangerouslySetInnerHTML={{ __html: positionDescription.description }} />
         </div>
         </CustomContainer>

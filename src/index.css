@@ -2,7 +2,7 @@
   font-family: sans-serif;
   text-decoration: none;
   box-sizing: border-box;
-  list-style-type: none;
+  /*list-style-type: none; */
 }
 
 body {
@@ -125,6 +125,9 @@ body {
 /*------------------------------HEADER-----------------------------------*/
 
 
+/*------------------------------FOOTER-----------------------------------*/
+
+
 .footer-container {
   background-color: #457B9D;
   display: flex;
@@ -148,4 +151,18 @@ body {
 
 .footer-whatever {
   padding: 16px;
+}
+
+/*------------------------------FOOTER-----------------------------------*/
+
+
+.position_description__container {
+  color: #3f3d34;
+  padding: 1rem;
+  font-size: 1rem;
+}
+
+.position_description_title {
+  font-size: 2rem;
+
 }
