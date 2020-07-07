@@ -7,16 +7,6 @@ import {withStyles} from "@material-ui/core/styles";
 
 const SearchPage = () => {
 
-    const {getOpeningPositions} = useContext(SearchResultContext);
-
-    const getPosition = () => {
-        getOpeningPositions();
-    };
-
-
-    useEffect(() => {
-        getPosition();
-    }, []);
 
     const CustomContainer = withStyles((theme) => ({
         root: {

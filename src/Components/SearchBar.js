@@ -52,6 +52,7 @@ const SearchBar = () => {
         searchJobs(description, location, checked);
     };
 
+
     const handleChecked = () => {
       setChecked(!checked);
     };

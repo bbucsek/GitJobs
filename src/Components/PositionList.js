@@ -6,7 +6,7 @@ import Button from "@material-ui/core/Button";
 
 const PositionList = () => {
 
-    const {searchResults, nextPagePositions, getNextPagePositions, previousPagePositions, getPreviousPagePositions} = useContext(SearchResultContext);
+    const {searchResults, nextPagePositions, loadMorePosition} = useContext(SearchResultContext);
 
     const PaginationButton = withStyles((theme) => ({
         root: {
@@ -20,22 +20,14 @@ const PositionList = () => {
         },
     }))(Button);
 
-    const setNextPageButton = () => {
+
+    const setLoadMoreButton = () => {
         return !nextPagePositions.length > 0;
     };
 
-    const setPreviousPageButton = () => {
-        return !previousPagePositions.length > 0;
-    };
 
-    const handleNextPageButton = () => {
-        getNextPagePositions();
-        window.scrollTo(0, 0)
-    };
-
-    const handlePreviousPageButton = () => {
-        getPreviousPagePositions();
-        window.scrollTo(0, 0)
+    const handleMorePosition = () => {
+        loadMorePosition();
     };
 
     if (!searchResults) {
@@ -49,10 +41,9 @@ const PositionList = () => {
                     return <PositionListItem key={position.id} position={position}/>
                 })}
                 <div>
-                    <PaginationButton disabled={setPreviousPageButton()}
-                                      onClick={handlePreviousPageButton}>Previous</PaginationButton>
-                    <PaginationButton disabled={setNextPageButton()}
-                                      onClick={handleNextPageButton}>Next</PaginationButton>
+                    <PaginationButton disabled={setLoadMoreButton()}
+                                      onClick={handleMorePosition}>More</PaginationButton>
+
                 </div>
             </div>
         </React.Fragment>
