@@ -156,6 +156,9 @@ body {
 /*------------------------------FOOTER-----------------------------------*/
 
 
+/*------------------------------POSITION DESCRIPTION STYLE-----------------------------------*/
+
+
 .position_description__container {
   color: #3f3d34;
   padding: 1rem;
@@ -166,3 +169,9 @@ body {
   font-size: 2rem;
 
 }
+
+p:last-of-type {
+  color: red;
+}
+
+/*------------------------------POSITION DESCRIPTION STYLE-----------------------------------*/

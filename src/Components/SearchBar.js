@@ -15,7 +15,18 @@ const SearchBar = () => {
             '& .MuiTextField-root': {
                 margin: theme.spacing(1),
                 width: '99%',
+                '& fieldset': {
+                    borderColor: '#457B9D !important',
+                },
+                '&:hover fieldset': {
+                    borderColor: '#457B9D',
+                },
+
             },
+            '& label.Mui-focused': {
+                color: '#457B9D',
+            },
+
         },
     }));
 
@@ -30,7 +41,6 @@ const SearchBar = () => {
             },
         },
     }))(Button);
-
 
 
     const classes = useStyles();
