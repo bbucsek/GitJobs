@@ -12,7 +12,7 @@ const PositionList = () => {
         root: {
             color: "white",
             backgroundColor: "#457B9D",
-            width: "10%",
+            width: "15%",
             margin: '1rem',
             '&:hover': {
                 backgroundColor: "#4d92bc",
@@ -42,7 +42,7 @@ const PositionList = () => {
                 })}
                 <div>
                     <PaginationButton disabled={setLoadMoreButton()}
-                                      onClick={handleMorePosition}>More</PaginationButton>
+                                      onClick={handleMorePosition}>Load More</PaginationButton>
 
                 </div>
             </div>

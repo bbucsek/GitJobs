@@ -64,11 +64,11 @@ const SearchBar = () => {
 
 
     const handleChecked = () => {
-      setChecked(!checked);
+        setChecked(!checked);
     };
 
     const btnDisabled = () => {
-      return !location && !description;
+        return !location && !description;
 
     };
 
@@ -100,10 +100,9 @@ const SearchBar = () => {
                     }
                     label="Full time"
                 />
-                <SearchButton variant="contained"
-                        color="primary"
-                        disabled={btnDisabled()}
-                        onClick={handleSearch}
+                <SearchButton
+                    disabled={btnDisabled()}
+                    onClick={handleSearch}
                 >
                     Search
                 </SearchButton>
