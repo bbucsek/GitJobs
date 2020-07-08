@@ -16,6 +16,7 @@ const PositionDescription = () => {
 
     useEffect(() => {
         getPosition();
+        window.scrollTo(0, 0);
     }, []);
 
     const CustomContainer = withStyles((theme) => ({
