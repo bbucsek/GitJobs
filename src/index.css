@@ -62,9 +62,14 @@ body {
   font-size: 1.5rem;
 }
 
-.position_list_item_company {
+.position_list_item_company a{
   color: #7c919e;
   font-weight: bold;
+}
+
+.position_list_item_company a:hover,
+.position_list_item_company a:active {
+  color: #5d6d77;
 }
 
 .position_list_item_type {

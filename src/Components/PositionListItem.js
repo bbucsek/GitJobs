@@ -17,7 +17,7 @@ const PositionListItem = ({position}) => {
                 </div>
                 <div className="position_list_item__left_wrapper">
                 <div className="position_list_item_company">
-                    {position.company}
+                    <a href={position.company_url} target="_blank">{position.company}</a>
                 </div>
                 <div className="position_list_item_type">
                     {position.type}

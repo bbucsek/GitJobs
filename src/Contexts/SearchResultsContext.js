@@ -29,7 +29,7 @@ export const SearchResultProvider = props => {
         setPageCount(1);
         console.log(`searchjobs${pageCount}`);
         let fullTime = checked ? "&full_time=on" : "";
-        let url = `${PROXY_URL}${API_URL}.json?utf8=%E2%9C%93&description=${description}&location=${location}${fullTime}`;
+        let url = `${PROXY_URL}${API_URL}.json?utf8=%E2%9C%93&description=${description}&location=${location}${fullTime}&`;
         setCurrentUrl(url);
         //let nextPageUrl = `${PROXY_URL}${API_URL}.json?utf8=%E2%9C%93&description=${description}&location=${location}${fullTime}&page=${2}`;
         let positions = await ApiService.searchPositions(url);
@@ -46,7 +46,7 @@ export const SearchResultProvider = props => {
     };
 
     const getOpeningPositions = async () => {
-        let url = `${PROXY_URL}${API_URL}.json`;
+        let url = `${PROXY_URL}${API_URL}.json?`;
         //let nextPagePositions = await ApiService.searchPositions(nextPageUrl);
         setCurrentUrl(url);
         //let nextPageUrl = `${PROXY_URL}${API_URL}.json?page=${pageCount}`;
@@ -59,7 +59,7 @@ export const SearchResultProvider = props => {
     const getNextPagePositions = async (url, page) => {
         let pageC = page ? page : pageCount;
         console.log(`nextPagePositions${pageC}`);
-        let nextPageUrl = `${url}&page=${pageC + 1}`;
+        let nextPageUrl = `${url}page=${pageC + 1}`;
         let nextPagePos = await ApiService.searchPositions(nextPageUrl);
         setPageCount(pageC + 1);
         setNextPagePositions(nextPagePos);
