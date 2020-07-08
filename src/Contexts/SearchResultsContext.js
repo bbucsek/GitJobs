@@ -33,8 +33,7 @@ export const SearchResultProvider = props => {
     };
 
     const getPositionDetails = async (positionId) => {
-        let url = `${PROXY_URL}${API_URL}/${positionId}.json`;
-        let positionDetails = await ApiService.getPositionDetails(url);
+        let positionDetails = searchResults.find(position => position.id === positionId);
         setPositionDescription(positionDetails);
     };
 
