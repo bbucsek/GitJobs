@@ -2,7 +2,6 @@
   font-family: sans-serif;
   text-decoration: none;
   box-sizing: border-box;
-  /*list-style-type: none; */
 }
 
 body {
@@ -107,7 +106,6 @@ body {
   background: #457B9D;
   padding: 0.5rem 1rem;
   display: flex;
-  align-items: center;
   justify-content: flex-end;
   z-index: 100;
 
@@ -186,3 +184,20 @@ body {
 }
 
 /*------------------------------CHECKBOX STYLE-----------------------------------*/
+
+
+/*------------------------------LOADING STYLE-----------------------------------*/
+
+.position_list_item_loading {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+
+}
+
+
+/*------------------------------LOADING STYLE-----------------------------------*/

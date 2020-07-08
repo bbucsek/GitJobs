@@ -21,6 +21,7 @@ export const SearchResultProvider = props => {
 
 
     const searchJobs = async (description, location, checked) => {
+        setSearchResults([]);
         setPageCount(1);
         let startingPageCount = 1;
         let fullTime = checked ? "&full_time=on" : "";

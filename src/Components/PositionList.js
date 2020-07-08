@@ -1,12 +1,15 @@
-import React, {useContext} from 'react';
+import React, {useContext, useState} from 'react';
 import {SearchResultContext} from "../Contexts/SearchResultsContext";
 import PositionListItem from "./PositionListItem";
 import {withStyles} from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
+import LinearProgressWithLabel from '@material-ui/core/LinearProgress';
+
 
 const PositionList = () => {
 
     const {searchResults, nextPagePositions, loadMorePosition} = useContext(SearchResultContext);
+    const [progress, setProgress] = useState(10);
 
     const PaginationButton = withStyles((theme) => ({
         root: {
@@ -20,6 +23,18 @@ const PositionList = () => {
         },
     }))(Button);
 
+    const LoadingBar = withStyles((theme) => ({
+        root: {
+            width: "50%",
+            padding: "1rem",
+            height: "1.5rem",
+            margin: "0 auto",
+        },
+        bar: {
+            backgroundColor: "#457B9D",
+        },
+    }))(LinearProgressWithLabel);
+
 
     const setLoadMoreButton = () => {
         return !nextPagePositions.length > 0;
@@ -30,8 +45,12 @@ const PositionList = () => {
         loadMorePosition();
     };
 
-    if (!searchResults) {
-        return
+    if (!searchResults.length > 0) {
+        return (
+            <div className="position_list__container">
+                <LoadingBar value={progress}/>
+            </div>
+        )
     }
 
     return (
