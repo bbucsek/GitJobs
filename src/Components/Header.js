@@ -9,6 +9,7 @@ const Header = () => {
         history.push("/");
     };
 
+
     return (
         <div className="header">
             <div className="header__title" onClick={handleClick}>

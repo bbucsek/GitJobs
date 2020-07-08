@@ -36,7 +36,7 @@ export const SearchResultProvider = props => {
         //let nextPagePositions = await ApiService.searchPositions(nextPageUrl);
         setSearchResults(positions);
         //setNextPagePositions(nextPagePositions);
-        await getNextPagePositions(url);
+        await getNextPagePositions(url, 1);
     };
 
     const getPositionDetails = async (positionId) => {
@@ -56,11 +56,12 @@ export const SearchResultProvider = props => {
         await getNextPagePositions(url);
     };
 
-    const getNextPagePositions = async (url) => {
-        console.log(`nextPagePositions${pageCount}`);
-        let nextPageUrl = `${url}?page=${pageCount + 1}`;
+    const getNextPagePositions = async (url, page) => {
+        let pageC = page ? page : pageCount;
+        console.log(`nextPagePositions${pageC}`);
+        let nextPageUrl = `${url}&page=${pageC + 1}`;
         let nextPagePos = await ApiService.searchPositions(nextPageUrl);
-        setPageCount(pageCount + 1);
+        setPageCount(pageC + 1);
         setNextPagePositions(nextPagePos);
 
     };
