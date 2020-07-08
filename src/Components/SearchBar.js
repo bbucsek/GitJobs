@@ -68,7 +68,7 @@ const SearchBar = () => {
     };
 
     const btnDisabled = () => {
-        return !location && !description;
+        return !location && !description && !checked;
 
     };
 

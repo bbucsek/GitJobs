@@ -8,11 +8,6 @@ export const SearchResultProvider = props => {
 
     const PROXY_URL = "https://thingproxy.freeboard.io/fetch/";
     const API_URL = "https://jobs.github.com/positions";
-    /*const CONFIG = {
-        headers: {
-            'Access-Control-Expose-Headers': 'access-control-allow-origin'
-        }
-    };*/
 
     const [searchResults, setSearchResults] = useState([]);
     const [positionDescription, setPositionDescription] = useState([]);
@@ -27,16 +22,13 @@ export const SearchResultProvider = props => {
 
     const searchJobs = async (description, location, checked) => {
         setPageCount(1);
-        console.log(`searchjobs${pageCount}`);
+        let startingPageCount = 1;
         let fullTime = checked ? "&full_time=on" : "";
         let url = `${PROXY_URL}${API_URL}.json?utf8=%E2%9C%93&description=${description}&location=${location}${fullTime}&`;
         setCurrentUrl(url);
-        //let nextPageUrl = `${PROXY_URL}${API_URL}.json?utf8=%E2%9C%93&description=${description}&location=${location}${fullTime}&page=${2}`;
         let positions = await ApiService.searchPositions(url);
-        //let nextPagePositions = await ApiService.searchPositions(nextPageUrl);
         setSearchResults(positions);
-        //setNextPagePositions(nextPagePositions);
-        await getNextPagePositions(url, 1);
+        await getNextPagePositions(url, startingPageCount);
     };
 
     const getPositionDetails = async (positionId) => {
@@ -47,18 +39,14 @@ export const SearchResultProvider = props => {
 
     const getOpeningPositions = async () => {
         let url = `${PROXY_URL}${API_URL}.json?`;
-        //let nextPagePositions = await ApiService.searchPositions(nextPageUrl);
         setCurrentUrl(url);
-        //let nextPageUrl = `${PROXY_URL}${API_URL}.json?page=${pageCount}`;
         let openingPositions = await ApiService.searchPositions(url);
         setSearchResults(openingPositions);
-        //setNextPagePositions(nextPagePositions);
         await getNextPagePositions(url);
     };
 
     const getNextPagePositions = async (url, page) => {
         let pageC = page ? page : pageCount;
-        console.log(`nextPagePositions${pageC}`);
         let nextPageUrl = `${url}page=${pageC + 1}`;
         let nextPagePos = await ApiService.searchPositions(nextPageUrl);
         setPageCount(pageC + 1);
@@ -67,8 +55,6 @@ export const SearchResultProvider = props => {
     };
 
     const loadMorePosition =  async () => {
-        //let nextPageUrl = `${currentUrl}?page=${pageCount}`;
-        //let nextPagePos = await ApiService.searchPositions(nextPageUrl);
         setSearchResults([...searchResults, ...nextPagePositions]);
         await getNextPagePositions(currentUrl);
     };
