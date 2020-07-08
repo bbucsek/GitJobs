@@ -9,6 +9,8 @@ const PositionListItem = ({position}) => {
         history.push("/position/" + position.id)
     };
 
+    const date = new Date(position.created_at);
+
     return (
         <div className="position_list_item">
             <div className="position_list_item__left">
@@ -26,7 +28,7 @@ const PositionListItem = ({position}) => {
             </div>
             <div className="position_list_item__right">
                 <div className="position_list_item_date">
-                    {position.created_at}
+                    {date.toLocaleDateString()}
                 </div>
                 <div className="position_list_item_location">
                     {position.location}
