@@ -1,11 +1,14 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import { useHistory } from 'react-router-dom';
+import {SearchResultContext} from "../Contexts/SearchResultsContext";
 
 const Header = () => {
 
     const history = useHistory();
+    const {getOpeningPositions} = useContext(SearchResultContext);
 
     const handleClick = () => {
+        getOpeningPositions();
         history.push("/");
     };
 
