@@ -51,10 +51,10 @@ export const SearchResultProvider = props => {
     };
 
     const getNextPagePositions = async (url, page) => {
-        let pageC = page ? page : pageCount;
-        let nextPageUrl = `${url}page=${pageC + 1}`;
+        let newPageCount = page ? page : pageCount;
+        let nextPageUrl = `${url}page=${newPageCount + 1}`;
         let nextPagePos = await ApiService.searchPositions(nextPageUrl);
-        setPageCount(pageC + 1);
+        setPageCount(newPageCount + 1);
         setNextPagePositions(nextPagePos);
 
     };
