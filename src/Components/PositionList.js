@@ -9,7 +9,7 @@ import LinearProgressWithLabel from '@material-ui/core/LinearProgress';
 const PositionList = () => {
 
     const {searchResults, nextPagePositions, loadMorePosition} = useContext(SearchResultContext);
-    const [progress, setProgress] = useState(10);
+    const [progress] = useState(10);
 
     const PaginationButton = withStyles((theme) => ({
         root: {
@@ -45,13 +45,23 @@ const PositionList = () => {
         loadMorePosition();
     };
 
-    if (!searchResults.length > 0) {
+    if (searchResults === null) {
         return (
             <div className="position_list__container">
                 <LoadingBar value={progress}/>
             </div>
         )
     }
+
+    if (!searchResults.length > 0) {
+        return (
+            <div className="position_list__not_found">
+                No results. Maybe another keyword/country?
+            </div>
+        )
+    }
+
+
 
     return (
         <React.Fragment>

@@ -4,13 +4,10 @@ const Footer = () => {
     return (
         <div className="footer-container">
             <div className="footer-title">
-                title
+                Copyright © 2020 GitJobs Ltd | All rights reserved
             </div>
             <div className="footer-contact">
-                contact
-            </div>
-            <div className="footer-whatever">
-                whatever
+                info@gitjobs.com
             </div>
         </div>
     );

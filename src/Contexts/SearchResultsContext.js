@@ -9,7 +9,7 @@ export const SearchResultProvider = props => {
     const PROXY_URL = "https://thingproxy.freeboard.io/fetch/";
     const API_URL = "https://jobs.github.com/positions";
 
-    const [searchResults, setSearchResults] = useState([]);
+    const [searchResults, setSearchResults] = useState(null);
     const [positionDescription, setPositionDescription] = useState([]);
     const [nextPagePositions, setNextPagePositions] = useState([]);
     const [pageCount, setPageCount] = useState(1);
@@ -21,7 +21,7 @@ export const SearchResultProvider = props => {
 
 
     const searchJobs = async (description, location, checked) => {
-        setSearchResults([]);
+        setSearchResults(null);
         setPageCount(1);
         let startingPageCount = 1;
         let fullTime = checked ? "&full_time=on" : "";

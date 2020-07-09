@@ -94,6 +94,16 @@ body {
   color: #457B9D;
 }
 
+.position_list__not_found {
+  display: flex;
+  flex-direction: row;
+  color: #4d92bc;
+  font-weight: bold;
+  font-size: 1.5rem;
+  padding: 1rem;
+  justify-content: center;
+}
+
 /*------------------------POSITION LIST ITEM STYLE----------------------*/
 
 
@@ -134,7 +144,7 @@ body {
 .footer-container {
   background-color: #457B9D;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   flex-direction: row;
   padding: 32px;
   color: #F5F2E0;
@@ -150,11 +160,9 @@ body {
 
 .footer-contact {
   padding: 16px;
+  justify-content: flex-end;
 }
 
-.footer-whatever {
-  padding: 16px;
-}
 
 /*------------------------------FOOTER-----------------------------------*/
 
